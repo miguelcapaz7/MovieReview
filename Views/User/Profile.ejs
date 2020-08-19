@@ -1,0 +1,23 @@
+<% layout('../layouts/mainlayout.ejs') -%>
+<br/><br/>
+<h2>User Profile</h2>
+<br>
+<table>
+    <tr>
+        <td><b>Public Facing Name: </b> <%= user.username %></td>
+    </tr>
+    <tr>
+        <td><b>First Name: </b> <%= user.firstName %></td>
+    </tr>
+    <tr>
+        <td><b>Last Name: </b> <%= user.lastName %></td>
+    </tr>
+    <tr>
+        <td><b>Email: </b> <%= user.email %></td>
+    </tr>
+</table>
+<br>
+
+<td><a href="/User/EditProfile?username=<%=user.username %>">Update Profile</a></td>
+    
+

@@ -1,0 +1,31 @@
+<% layout('../layouts/mainlayout.ejs') -%>
+<br/><br/>
+<h2>My Reviews</h2>
+<br>
+<table>
+<% for(var i=0; i < movies.length; i++) { %>
+    <% for(var j=0; j < movies[i].rating.length; j++) { %>
+        <% if (movies[i].rating.length > 0 && movies[i].author[j] == reqInfo.username) { %>
+            <tr>
+                <td><h5><%= movies[i].movieName %></h5></td>
+            </tr>
+            <tr>
+                <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp 
+                    <b>Stars: </b> <%= parseInt(movies[i].rating[j]).toFixed(1) %></td>
+                <td>
+                    <form action="/Movie/Delete" method="POST">
+                        <input id="_id" name="_id" type="hidden" value=<%= movies[i]._id %> />
+                        <a href="/Movie/EditReview?_id=<%=movies[i]._id %>">Edit</a> |
+                        <input type="submit" value="Delete">
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <%= movies[i].date[j] %></td>
+                <td><%= movies[i].reviews[j] %></td>
+            </tr>
+            <tr><td>&nbsp</td></tr>
+        <% } %> 
+    <% } %> 
+<% } %> 
+</table>

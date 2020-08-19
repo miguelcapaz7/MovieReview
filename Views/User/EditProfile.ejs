@@ -1,0 +1,32 @@
+<% layout('../layouts/mainlayout.ejs') -%>
+<br/><br/>
+<b></b>
+
+<form action="/User/UpdateProfile" method="POST">
+
+<h3>Update Profile</h3><br>
+<b>Public Facing Name: </b> <%= reqInfo.username %>
+<input type='hidden' name="username" value= <%= user.username %> />
+
+<table>
+       <tr>
+              <td><b>First Name: </b></td>
+              <td><input type='text'  name="firstName" 
+                     value="<%= user.firstName ? user.firstName : '' %>"  /></td>
+       </tr>
+       <tr>
+              <td><b>Last Name: </b></td>
+              <td><input type='text'  name="lastName" 
+                     value="<%= user.lastName ? user.lastName : '' %>"  /></td>
+       </tr>
+       <tr>
+              <td><b>Email: </b></td>
+              <td><input type='text'  name="email" 
+                     value="<%= user.email ? user.email : '' %>"  /></td>
+       </tr>
+</table>
+<input type="submit" value="Submit">
+<br><br><br>
+<a href="/User/Profile">Return to Profile</a>
+
+</form>

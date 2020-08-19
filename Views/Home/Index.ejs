@@ -1,0 +1,31 @@
+<% layout('../layouts/mainlayout.ejs') -%>
+<br/><br/>
+<h2>Movie Listings</h2>
+<br/><br/>
+<%= errorMessage %><br/>
+<table>
+<% for(var i=0; i < movies.length; i++) { %>
+    <tr>
+      <td><b><%= movies[i].movieName %></b></td>
+      <td>
+        <% if (movies[i].rating.length == 0) { %>
+          <br><br><b>Stars: </b>0.0
+        <% } else { %>
+            <% var sum = 0 %>
+            <% for(var j=0; j < movies[i].rating[j]; j++) { %>
+              <% sum += parseInt (movies[i].rating[j]) %>
+            <% } %> 
+            <% avg = (sum / movies[i].rating.length).toFixed(1) %>
+              <br><br><b>Stars: </b><%= avg %>
+          <% } %> 
+      </td>
+      <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>  <!--This is to add extra space-->
+      <td>
+        <br><br><b><a href="/Movie/Reviews?_id=<%= movies[i]._id %>">Reviews: <%= movies[i].reviews.length%></a></b>
+      </td>
+      <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<td>
+        <br><br><a href="/Movie/WriteReview?_id=<%=movies[i]._id %>">Write a Review</a>
+      </td>
+    </tr>
+ <% } %>
+</table>

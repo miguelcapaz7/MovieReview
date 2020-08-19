@@ -1,0 +1,28 @@
+<% layout('../layouts/mainlayout.ejs') -%><br/>
+<h3>Write a Review</h3>
+<br>
+<b><%= movie.movieName %></b>
+<br>
+<br>
+<form action="/Movie/Create" method="POST">
+    <table>
+        <tr>
+            <input type='hidden' name="_id" value= <%= movie._id %> />
+            <td>Review </td>
+            <td><input type="text" name="reviews" 
+                value=<%= movie.reviews ? movie.reviews : '' %>></td>
+        </tr>
+        <tr>
+            <td>Rating(1 to 5):</td>
+            <td><input name="rating" type="text" 
+                 value=<%= movie.rating ? movie.rating : '' %>></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td> <input type="submit" value="Submit"></td>
+        </tr>
+    </table>
+</form>
+<br>
+<%= errorMessage %><br/>
+<a href="/">Cancel</a>

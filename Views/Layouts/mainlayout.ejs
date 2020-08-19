@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<main role="main" class="container">
+    <div class="starter-template">
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark"></nav>
+            <button class="navbar-toggler" type="button" 
+                data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a href="/">Home</a> |
+            <%if (reqInfo.authenticated) { %>
+                <a href="/User/Profile">Profile</a> |
+                <a href="/Movie/MyReviews">My Reviews</a> |
+                <a href="/User/Logout">Logout [<%= reqInfo.username %>]</a>
+            <% } else { %>
+                <a href="/User/Register">Register</a> |
+                <a href="/User/Login">Login</a> 
+            <% } %> 
+            
+            <!-- Child view goes here. -->
+            <%- body %>
+    </div>
+</main>
+
+</body>
+</html>
