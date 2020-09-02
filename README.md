@@ -15,6 +15,7 @@ The following are **required** to install:
   - [MongoDB](https://www.mongodb.com/try/download/community)
   
 **Dependencies**
+
 Navigate the folder where app.js is located in and run `npm install express --save` to install EJS.
 
 ## Usage
