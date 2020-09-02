@@ -3,7 +3,7 @@
 ## Description
 A movie review application built with Node.js and a MongoDB backend. Users can register an account and login to rate a movie. They can write a written review of the movie and rate it out of 5, where the average is calculated. Reviews can be viewed by any user, and each signed in user can manage their written reviews such as editing or deleting it.
 
-## Technologies used:
+## Technologies Used
   - HTML/EJS
   - Node.js
   - MongoDB
