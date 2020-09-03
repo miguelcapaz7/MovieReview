@@ -46,6 +46,6 @@ db.movies.insert(
 )
 ```
 
-You can now run the app where the app.js folder is in by using your IDE or by using `node app.js`.
+You can now run the app where the app.js folder is in by using your IDE or by using `node app.js`. Then go to localhost:1337 in your browser to view the application.
 
 This is a project from the Developing Web Applications course at BCIT.
